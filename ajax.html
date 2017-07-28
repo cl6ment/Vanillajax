@@ -2,76 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>ajax test</title>
-
-	<style>
-		#form{
-			margin: 0 auto;
-			width: 300px;
-			display: flex;
-			background-color: grey;
-			padding: 50px 35px;
-			box-shadow: 1px 1px 20px rgba(0,0,0,0.3);
-			flex-wrap: wrap;
-			margin-top: 50vh;
-			transform: translateY(-50%) translateX(125px);
-		}
-		input{
-			display: block;
-			border: none;
-			outline: none;
-			background-color: #EEEEEE;
-			padding: 13px 5px;
-			color: #424242;
-			font-size: 13px;
-			margin: 0px;
-			width: 100%;
-			border-bottom: 1px solid #424242;
-		}
-		.button{
-			padding: 10px 20px;
-			background-color: #424242;
-			color: white;
-			cursor: pointer;
-			margin: 0px;
-			width: 100%;
-			text-align: center;
-			text-transform: uppercase;
-			font-size: 13px;
-		}
-		.button:active{
-			background-color: black;
-		}
-
-		.content{
-			left: -250px;
-			text-align: center;
-			font-weight: lighter;
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			width: 250px;
-			background-color: white;
-			z-index: 10;
-			background-color: #EEEEEE;
-			text-align: center;
-			border-right: 1px solid #424242;
-			transition: all 350ms;
-		}
-		.content p{
-			line-height: 1.9;
-			font-family: monospace;
-			font-size: 13px;
-			color: #424242;
-		}
-	</style>
+	<title>Ajax demo</title>
 </head>
 <body>
 
 	<div id="form">
 		<input type="name" id="name" placeholder="Entrez votre nom">
 		<input type="text" id="age" placeholder="Entrez votre age">
-		<div class="button">Envoyer</div>
+		<input type="submit">
 	</div>
 
 	<div class="content"></div>
@@ -79,12 +17,12 @@
 	<script src="app.js" async></script>
 	<script>
 		document.querySelector(".button").addEventListener("click", (e)=>{
-
+			e.preventDefault
+			e.StopImmediatePropagation
 			var name = document.querySelector("#name").value,
 				age = document.querySelector("#age").value;
-
 			document.querySelector(".content").innerHTML = ajax("GET", "ajax-loaded.php", {name:name, age:age}, ".content");
-
+			return false
 		})
 	</script>
 </body>
