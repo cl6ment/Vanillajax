@@ -21,7 +21,7 @@
 			e.StopImmediatePropagation
 			var name = document.querySelector("#name").value,
 				age = document.querySelector("#age").value;
-			document.querySelector(".content").innerHTML = ajax("GET", "ajax-loaded.php", {name:name, age:age}, ".content");
+			document.querySelector(".content").innerHTML = ajax("GET", "ajax.php", {name:name, age:age}, ".content");
 			return false
 		})
 	</script>
