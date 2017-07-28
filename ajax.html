@@ -7,21 +7,21 @@
 <body>
 
 	<div id="form">
-		<input type="name" id="name" placeholder="Entrez votre nom">
-		<input type="text" id="age" placeholder="Entrez votre age">
-		<input type="submit">
+		<input type="name" id="name">
+		<input type="text" id="age">
+		<input type="submit" id="submit">
 	</div>
 
-	<div class="content"></div>
+	<div id="content"></div>
 
 	<script src="app.js" async></script>
 	<script>
-		document.querySelector(".button").addEventListener("click", (e)=>{
+		document.querySelector("#submit").addEventListener("click", (e)=>{
 			e.preventDefault
 			e.StopImmediatePropagation
 			var name = document.querySelector("#name").value,
 				age = document.querySelector("#age").value;
-			document.querySelector(".content").innerHTML = ajax("GET", "ajax.php", {name:name, age:age}, ".content");
+			document.querySelector("#content").innerHTML = ajax("GET", "ajax.php", {name:name, age:age}, "#content")
 			return false
 		})
 	</script>
